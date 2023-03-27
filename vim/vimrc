@@ -99,7 +99,7 @@ nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
 
 " CoC extensions
-let g:coc_global_extensions = ['coc-tsserver']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-eslint', 'coc-css', 'coc-prettier', 'coc-elixir', 'coc-prisma', '@yaegassy/coc-tailwindcss3']
 
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
