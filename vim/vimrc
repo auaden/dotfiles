@@ -1,0 +1,127 @@
+" Hello there
+
+set nocompatible " Disable compatibility with vi which can cause unexpected issues.
+set foldmethod=syntax
+set foldlevel=99
+set backspace=indent,eol,start
+set shiftwidth=2
+set tabstop=2
+set encoding=utf8
+
+syntax on " Turn syntax highlighting on.
+
+filetype on " Enable type file detection. Vim will be able to try to detect the type of file in use.
+filetype plugin on " Enable plugins and load plugin for the detected file type.
+filetype indent on " Load an indent file for the detected file type.
+
+let NERDTreeShowHidden=1
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" PLUGINS ----------------------------------------------------------------
+call plug#begin('~/.vim/plugged')
+  Plug 'dense-analysis/ale'
+	Plug 'preservim/nerdtree'
+	Plug 'preservim/nerdcommenter'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'pangloss/vim-javascript'    " JavaScript support
+  Plug 'leafgarland/typescript-vim' " TypeScript syntax
+	Plug 'Quramy/tsuquyomi'
+  Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+  Plug 'jparise/vim-graphql'        " GraphQL syntax
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'elixir-editors/vim-elixir' " Elixir support
+	Plug 'prisma/vim-prisma' " Prisma support
+	Plug 'airblade/vim-gitgutter' " Git Support
+	Plug 'neoclide/jsonc.vim' "JSON formatting
+	Plug 'tmsvg/pear-tree' " opening/closing brackets
+	" Plug 'AndrewRadev/tagalong.vim'
+	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-surround'
+  Plug 'easymotion/vim-easymotion'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+
+	" Themes
+	Plug 'arcticicestudio/nord-vim'
+	Plug 'junegunn/seoul256.vim'
+call plug#end()
+
+
+"Color Scheme
+if (has("termguicolors"))
+	set termguicolors
+endif
+
+set background=dark
+" "colorscheme nord
+" highlight Comment ctermfg=darkgray
+colo seoul256
+
+let g:airline_theme='zenburn'
+
+" MAPPINGS --------------------------------------------------------------- {{{
+
+" Type jj to exit insert mode quickly.
+inoremap jj <Esc>
+
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" Use arrow keys to resize windows
+nnoremap <Up>    :resize -2<CR>
+nnoremap <Down>  :resize +2<CR>
+nnoremap <Left>  :vertical resize -2<CR>
+nnoremap <Right> :vertical resize +2<CR>
+
+" NERDTree specific mappings.
+nnoremap <leader>n :NERDTreeFocus<CR>
+map <leader>r :NERDTreeFind<cr>
+nnoremap <C-n> :NERDTree<CR>
+let g:NERDTreeMinimalMenu=1
+
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+
+nmap <C-P> :FZF<CR>
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+let g:tagalong_additional_filetypes = ['javascript']
