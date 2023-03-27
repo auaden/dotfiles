@@ -37,7 +37,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'pangloss/vim-javascript'    " JavaScript support
   Plug 'leafgarland/typescript-vim' " TypeScript syntax
-	Plug 'Quramy/tsuquyomi'
   Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
   Plug 'jparise/vim-graphql'        " GraphQL syntax
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -67,9 +66,10 @@ endif
 set background=dark
 " "colorscheme nord
 " highlight Comment ctermfg=darkgray
-colo seoul256
-
+let g:seoul256_background = 235
 let g:airline_theme='zenburn'
+
+colo seoul256
 
 " MAPPINGS --------------------------------------------------------------- {{{
 
@@ -93,9 +93,6 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 map <leader>r :NERDTreeFind<cr>
 nnoremap <C-n> :NERDTree<CR>
 let g:NERDTreeMinimalMenu=1
-
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 
 nmap <C-P> :FZF<CR>
 nnoremap <silent> <C-f> :Files<CR>
