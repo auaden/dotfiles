@@ -5,6 +5,7 @@ set backspace=indent,eol,start
 set shiftwidth=2
 set tabstop=2
 set encoding=utf8
+set number
 
 syntax on " Turn syntax highlighting on.
 
