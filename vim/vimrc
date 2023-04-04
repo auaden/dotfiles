@@ -1,5 +1,3 @@
-" Hello there
-
 set nocompatible " Disable compatibility with vi which can cause unexpected issues.
 set foldmethod=syntax
 set foldlevel=99
@@ -29,14 +27,12 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " PLUGINS ----------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-  Plug 'dense-analysis/ale'
 	Plug 'preservim/nerdtree'
 	Plug 'preservim/nerdcommenter'
   Plug 'ryanoasis/vim-devicons'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'pangloss/vim-javascript'    " JavaScript support
-  Plug 'leafgarland/typescript-vim' " TypeScript syntax
   Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
   Plug 'jparise/vim-graphql'        " GraphQL syntax
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -45,7 +41,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'airblade/vim-gitgutter' " Git Support
 	Plug 'neoclide/jsonc.vim' "JSON formatting
 	Plug 'tmsvg/pear-tree' " opening/closing brackets
-	" Plug 'AndrewRadev/tagalong.vim'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
   Plug 'easymotion/vim-easymotion'
