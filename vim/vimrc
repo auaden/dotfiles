@@ -6,6 +6,8 @@ set shiftwidth=2
 set tabstop=2
 set encoding=utf8
 set number
+set updatetime=100
+set directory^=$HOME/.vim/tmp// "to organise swp files"
 
 syntax on " Turn syntax highlighting on.
 
@@ -62,7 +64,7 @@ endif
 set background=dark
 " "colorscheme nord
 " highlight Comment ctermfg=darkgray
-let g:seoul256_background = 235
+" let g:seoul256_background = 235
 let g:airline_theme='zenburn'
 
 colo seoul256
@@ -88,7 +90,6 @@ nnoremap <Right> :vertical resize +2<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 map <leader>r :NERDTreeFind<cr>
 nnoremap <C-n> :NERDTree<CR>
-let g:NERDTreeMinimalMenu=1
 
 nmap <C-P> :FZF<CR>
 nnoremap <silent> <C-f> :Files<CR>
@@ -116,5 +117,3 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-
-let g:tagalong_additional_filetypes = ['javascript']
