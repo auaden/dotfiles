@@ -16,13 +16,13 @@ filetype plugin on " Enable plugins and load plugin for the detected file type.
 filetype indent on " Load an indent file for the detected file type.
 
 let NERDTreeShowHidden=1
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+let g:NERDTreeWinPos = "right"
+
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Open the existing NERDTree on each new tab.
-autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+" autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
@@ -60,6 +60,12 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+
 "Color Scheme
 if (has("termguicolors"))
 	set termguicolors
@@ -85,12 +91,11 @@ nnoremap <Left>  :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
 
 " NERDTree specific mappings.
-nnoremap <leader>n :NERDTreeFocus<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
-nnoremap <C-n> :NERDTree<CR>
 
 nmap <C-P> :FZF<CR>
-nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <C-f> :Ag<CR>
 nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
 
 " CoC extensions
@@ -107,7 +112,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
@@ -131,6 +135,3 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 let g:rustfmt_autosave = 1
-
-
-" let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -print'
