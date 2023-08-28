@@ -6,6 +6,7 @@ local function my_on_attach(bufnr)
 
   -- custom mappings
   vim.keymap.set('n', '<C-n>', api.tree.toggle, {})
+  vim.keymap.set("n", "<leader>R", vim.cmd.NvimTreeFindFile)
 end
 
 require("nvim-tree").setup({

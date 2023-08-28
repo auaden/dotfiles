@@ -13,10 +13,22 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use 'shaunsingh/seoul256.nvim'
+  use "savq/melange-nvim" 
+  use "folke/tokyonight.nvim"
+  use 'rebelot/kanagawa.nvim'
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive')
+  use ('tpope/vim-surround')
+  use ('jose-elias-alvarez/null-ls.nvim')
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  use {
+    "windwp/nvim-ts-autotag",
+    config = function() require("nvim-autopairs").setup {} end
+  }
   use { 'alexghergh/nvim-tmux-navigation', config = function()
     require'nvim-tmux-navigation'.setup {
       disable_when_zoomed = true, -- defaults to false
@@ -45,7 +57,6 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},     -- Required
 	  }
   }
-
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
