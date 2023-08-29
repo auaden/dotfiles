@@ -18,7 +18,7 @@ require('kanagawa').setup({
         return {}
     end,
     background = {               -- map the value of 'background' option to a theme
-        dark = "dragon",           -- try "dragon" !
+        dark = "wave",           -- try "dragon" !
         light = "lotus"
     },
 })
@@ -27,4 +27,4 @@ require('kanagawa').setup({
 -- vim.cmd("colorscheme kanagawa")
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'kanagawa'
+vim.cmd.colorscheme 'melange'
