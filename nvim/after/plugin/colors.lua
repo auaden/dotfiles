@@ -27,4 +27,4 @@ require('kanagawa').setup({
 -- vim.cmd("colorscheme kanagawa")
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'melange'
+vim.cmd.colorscheme 'nord'

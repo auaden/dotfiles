@@ -13,9 +13,12 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- Color Schemes
   use "savq/melange-nvim" 
   use "folke/tokyonight.nvim"
-  use 'rebelot/kanagawa.nvim'
+  use "rebelot/kanagawa.nvim"
+  use 'shaunsingh/nord.nvim'
+
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive')
