@@ -11,6 +11,12 @@
 #import:
 #  - /path/to/alacritty.yml
 
+import:
+  # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  # ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -52,7 +58,7 @@ window:
   #  y: 0
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: true
+  # dynamic_padding: true
 
   # Window decorations
   #
@@ -438,8 +444,7 @@ font:
 #thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
-
+live_config_reload: true
 # Shell
 #
 # You can set `shell.program` to the path of your favorite shell, e.g.
@@ -908,38 +913,3 @@ font:
 
 # Highlight window damage information.
 #highlight_damage: false
-
-# Kanagawa Alacritty Colors
-# Kanagawa Dragon Alacritty Colors
-colors:
-  primary:
-    background: "#181616"
-    foreground: "#c5c9c5"
-
-  normal:
-    black: "#0d0c0c"
-    red: "#c4746e"
-    green: "#8a9a7b"
-    yellow: "#c4b28a"
-    blue: "#8ba4b0"
-    magenta: "#a292a3"
-    cyan: "#8ea4a2"
-    white: "#C8C093"
-
-  bright:
-    black: "#a6a69c"
-    red: "#E46876"
-    green: "#87a987"
-    yellow: "#E6C384"
-    blue: "#7FB4CA"
-    magenta: "#938AA9"
-    cyan: "#7AA89F"
-    white: "#c5c9c5"
-
-  selection:
-    background: "#2D4F67"
-    foreground: "#C8C093"
-
-  indexed_colors:
-    - { index: 16, color: "#b6927b" }
-    - { index: 17, color: "#b98d7b" }

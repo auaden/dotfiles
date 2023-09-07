@@ -9,7 +9,6 @@ end
 local formatting = null_ls.builtins.formatting
 null_ls.setup({
 	sources = {
-		formatting.stylua,
 		formatting.prettier,
     formatting.google_java_format
 	},
