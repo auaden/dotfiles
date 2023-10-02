@@ -5,14 +5,15 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use ('wbthomason/packer.nvim')
+  use 'rebelot/kanagawa.nvim'
+  use 'navarasu/onedark.nvim'
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive')
   use ('tpope/vim-surround')
   use ('jose-elias-alvarez/null-ls.nvim')
-  use 'filNaj/tree-setter'
+  use ('mfussenegger/nvim-jdtls')
   use {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
