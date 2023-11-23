@@ -10,7 +10,8 @@ lsp.ensure_installed({
   'tsserver',
   'eslint',
   'graphql',
-  'tailwindcss'
+  'tailwindcss',
+  'svelte'
 })
 
 lsp.format_on_save({
@@ -25,6 +26,7 @@ lsp.format_on_save({
       'typescript', 
       'javascriptreact', 
       'typescriptreact', 
+      'svelte',
       'java',
       'proto'
     },

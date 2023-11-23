@@ -6,7 +6,9 @@ end
 local formatting = null_ls.builtins.formatting
 null_ls.setup({
 	sources = {
-		formatting.prettier,
+    formatting.prettier.with({
+      extra_filetypes = { "svelte" },
+    }),
     formatting.google_java_format,
     formatting.buf
 	},
