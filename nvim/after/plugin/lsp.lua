@@ -28,7 +28,8 @@ lsp.format_on_save({
       'typescriptreact', 
       'svelte',
       'java',
-      'proto'
+      'proto',
+      'scala'
     },
    }
 })
