@@ -10,7 +10,6 @@ null_ls.setup({
       extra_filetypes = { "svelte" },
     }),
     formatting.google_java_format,
-    formatting.buf,
-    formatting.scalafmt
+    formatting.buf
 	},
 })

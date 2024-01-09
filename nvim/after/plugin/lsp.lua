@@ -29,8 +29,10 @@ lsp.format_on_save({
       'svelte',
       'java',
       'proto',
-      'scala'
     },
+    ['metals'] = {
+      'scala'
+    }
    }
 })
 
