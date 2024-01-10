@@ -13,6 +13,13 @@ return require('packer').startup(function(use)
   use ('tpope/vim-surround')
   use ('jose-elias-alvarez/null-ls.nvim')
   use ('mfussenegger/nvim-jdtls')
+  use({
+    "scalameta/nvim-metals",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "mfussenegger/nvim-dap",
+    },
+  })
   use {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
