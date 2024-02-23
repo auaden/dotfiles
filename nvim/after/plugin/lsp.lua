@@ -6,6 +6,12 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
 end)
 
+vim.g.rustaceanvim = {
+  server = {
+    capabilities = lsp.get_capabilities()
+  },
+}
+
 lsp.ensure_installed({
   'tsserver',
   'eslint',
@@ -32,7 +38,10 @@ lsp.format_on_save({
     },
     ['metals'] = {
       'scala'
-    }
+    },
+    ['rust_analyzer'] = {
+      'rust'
+    },
    }
 })
 

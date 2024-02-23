@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
   use ('tpope/vim-surround')
   use ('jose-elias-alvarez/null-ls.nvim')
   use ('mfussenegger/nvim-jdtls')
+  use ('mrcjkb/rustaceanvim')
   use({
     "scalameta/nvim-metals",
     requires = {
