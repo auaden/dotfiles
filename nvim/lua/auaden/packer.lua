@@ -29,8 +29,9 @@ return require('packer').startup(function(use)
     "windwp/nvim-ts-autotag",
     config = function() require("nvim-ts-autotag").setup {} end
   }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {

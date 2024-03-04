@@ -2,7 +2,7 @@ local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
-
+  lsp.buffer_autoformat()
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
 end)
 
@@ -11,14 +11,6 @@ vim.g.rustaceanvim = {
     capabilities = lsp.get_capabilities()
   },
 }
-
-lsp.ensure_installed({
-  'tsserver',
-  'eslint',
-  'graphql',
-  'tailwindcss',
-  'svelte'
-})
 
 lsp.format_on_save({
   format_opts = {
