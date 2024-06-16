@@ -27,6 +27,8 @@ lsp.format_on_save({
       'svelte',
       'java',
       'proto',
+      'sql',
+      'yaml'
     },
     ['metals'] = {
       'scala'
