@@ -1,28 +1,28 @@
 local function my_on_attach(bufnr)
-  local api = require "nvim-tree.api"
+	local api = require("nvim-tree.api")
 
-  -- default mappings
-  api.config.mappings.default_on_attach(bufnr)
+	-- default mappings
+	api.config.mappings.default_on_attach(bufnr)
 
-  -- custom mappings
-  vim.keymap.set('n', '<C-n>', api.tree.toggle, {})
-  vim.keymap.set("n", "<leader>R", vim.cmd.NvimTreeFindFile)
+	-- custom mappings
+	vim.keymap.set("n", "<C-n>", api.tree.toggle, {})
+	vim.keymap.set("n", "<leader>R", vim.cmd.NvimTreeFindFile)
 end
 
 require("nvim-tree").setup({
-  on_attach = my_on_attach,
-  git = {
-    enable = true
-  },
-  view = {
-    width = 30,
-  },
-  filters = {
-    dotfiles = true,
-  },
-  actions = {
-    open_file = {
-      quit_on_open = false,
-    }
-  }
+	on_attach = my_on_attach,
+	git = {
+		enable = true,
+	},
+	view = {
+		width = 30,
+	},
+	filters = {
+		dotfiles = true,
+	},
+	actions = {
+		open_file = {
+			quit_on_open = false,
+		},
+	},
 })
