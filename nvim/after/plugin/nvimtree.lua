@@ -18,7 +18,7 @@ require("nvim-tree").setup({
 		width = 30,
 	},
 	filters = {
-		dotfiles = true,
+        dotfiles = false, -- Set to false to show hidden files
 	},
 	actions = {
 		open_file = {

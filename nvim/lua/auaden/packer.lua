@@ -7,6 +7,7 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 	use("auaden/seoul256.nvim")
+    use("ellisonleao/gruvbox.nvim") 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
