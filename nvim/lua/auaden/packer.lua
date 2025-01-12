@@ -7,7 +7,7 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 	use("auaden/seoul256.nvim")
-    use("ellisonleao/gruvbox.nvim") 
+	use("ellisonleao/gruvbox.nvim")
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
@@ -16,6 +16,14 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-jdtls")
 	use("mrcjkb/rustaceanvim")
 	use("stevearc/conform.nvim")
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+	use({
+		"folke/noice.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	})
 	use({
 		"scalameta/nvim-metals",
 		requires = {
