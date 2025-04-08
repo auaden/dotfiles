@@ -4,10 +4,10 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 	use("auaden/seoul256.nvim")
 	use("ellisonleao/gruvbox.nvim")
+    use 'shaunsingh/nord.nvim'
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
@@ -16,7 +16,20 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-jdtls")
 	use("mrcjkb/rustaceanvim")
 	use("stevearc/conform.nvim")
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+    use("github/copilot.vim")
+
+
+    use ({
+        "CopilotC-Nvim/CopilotChat.nvim",
+          requires = {
+            {'github/copilot.vim'}, -- The base Copilot plugin is recommended
+            {'nvim-lua/plenary.nvim'}, -- Common Lua functions
+          },
+          config = function()
+            require('CopilotChat').setup({})
+          end
+        })
+  	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 	use({
 		"folke/noice.nvim",
 		requires = {
