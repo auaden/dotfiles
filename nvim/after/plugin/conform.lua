@@ -7,11 +7,11 @@ require("conform").setup({
 		javascriptreact = { "prettier" },
 		typescriptreact = { "prettier" },
 		yaml = { "yamlfmt" },
-        json = { "prettier"},
-        jsonc = { "prettier"}
+		json = { "prettier" },
+		jsonc = { "prettier" },
 	},
 	format_on_save = {
-		lsp_format = "fallback",
+		lsp_fallback = true,
 		timeout_ms = 500,
 	},
 })

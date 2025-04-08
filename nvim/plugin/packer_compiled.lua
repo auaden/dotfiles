@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/aden/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?.lua;/Users/aden/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?/init.lua;/Users/aden/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?.lua;/Users/aden/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/aden/.cache/nvim/packer_hererocks/2.1.1720049189/lib/lua/5.1/?.so"
+local package_path_str = "/Users/aden/.cache/nvim/packer_hererocks/2.1.1744014795/share/lua/5.1/?.lua;/Users/aden/.cache/nvim/packer_hererocks/2.1.1744014795/share/lua/5.1/?/init.lua;/Users/aden/.cache/nvim/packer_hererocks/2.1.1744014795/lib/luarocks/rocks-5.1/?.lua;/Users/aden/.cache/nvim/packer_hererocks/2.1.1744014795/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/aden/.cache/nvim/packer_hererocks/2.1.1744014795/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -182,7 +182,7 @@ _G.packer_plugins = {
     url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-tmux-navigation"] = {
-    config = { "\27LJ\2\nÎ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\16keybindings\1\0\6\nright\n<C-l>\tnext\14<C-Space>\aup\n<C-k>\tdown\n<C-j>\tleft\n<C-h>\16last_active\n<C-\\>\1\0\2\16keybindings\0\24disable_when_zoomed\2\nsetup\25nvim-tmux-navigation\frequire\0" },
+    config = { "\27LJ\2\nÎ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\16keybindings\1\0\6\16last_active\n<C-\\>\nright\n<C-l>\tnext\14<C-Space>\aup\n<C-k>\tdown\n<C-j>\tleft\n<C-h>\1\0\2\16keybindings\0\24disable_when_zoomed\2\nsetup\25nvim-tmux-navigation\frequire\0" },
     loaded = true,
     path = "/Users/aden/.local/share/nvim/site/pack/packer/start/nvim-tmux-navigation",
     url = "https://github.com/alexghergh/nvim-tmux-navigation"
@@ -256,10 +256,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-ts-autotag
-time([[Config for nvim-ts-autotag]], true)
-try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
-time([[Config for nvim-ts-autotag]], false)
 -- Config for: CopilotChat.nvim
 time([[Config for CopilotChat.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\16CopilotChat\frequire\0", "config", "CopilotChat.nvim")
@@ -270,8 +266,12 @@ try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B
 time([[Config for nvim-autopairs]], false)
 -- Config for: nvim-tmux-navigation
 time([[Config for nvim-tmux-navigation]], true)
-try_loadstring("\27LJ\2\nÎ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\16keybindings\1\0\6\nright\n<C-l>\tnext\14<C-Space>\aup\n<C-k>\tdown\n<C-j>\tleft\n<C-h>\16last_active\n<C-\\>\1\0\2\16keybindings\0\24disable_when_zoomed\2\nsetup\25nvim-tmux-navigation\frequire\0", "config", "nvim-tmux-navigation")
+try_loadstring("\27LJ\2\nÎ\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\16keybindings\1\0\6\16last_active\n<C-\\>\nright\n<C-l>\tnext\14<C-Space>\aup\n<C-k>\tdown\n<C-j>\tleft\n<C-h>\1\0\2\16keybindings\0\24disable_when_zoomed\2\nsetup\25nvim-tmux-navigation\frequire\0", "config", "nvim-tmux-navigation")
 time([[Config for nvim-tmux-navigation]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+time([[Config for nvim-ts-autotag]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
